@@ -16,6 +16,8 @@
       h1.not{position:relative;right:100px
       }
       #not{display:none}
+      label{right:50px}
+      input{border-radius:10px}
     </style>
   </head>
   <body>
@@ -42,7 +44,7 @@
     <h1></h1>
     <a href = "https://iili.io/3wvwQKN.jpg">
       <div>
-        <button id = "browser">click this to load in your browser</button
+        <button id = "browser">click this to load in your browser</button>
           </div>
           </a>
         <img class = "logo" src = "https://iili.io/3wUwQYN.png" alt = "logo could not be loaded"/>
@@ -65,11 +67,31 @@
            document.getElementById("not").style.display = "none";
          }
         </script>
-        <h2 class = "space"><h2>
+        <h2 class = "space"></h2>
         <a href = "https://iili.io/3NmSwMb.jpg">
           <div>
             <button> click this to load in your browser</button
               </div>
               <a>
+                <h2></h2>
+                <label> image suggestions(link)</label>
+              <input id = "link" type = "text"/>
+                <h2></h2>
+                <label>your name</label>
+              <input id = "name" type = "text"/>
+                <div>
+                  <h2></h2>
+              <button id = "submit">submit</button>
+                </div>
+                <h2 id = "input_result"></h2>
+                <script>
+                 document.getElementById("submit").onclick = function(){
+            const suggestion=document.getElementById("link").value
+            console.log(suggestion)
+            const name = document.getElementById("name").value
+            console.log(name)
+            document.getElementById("input_result").textContent = `thank you for the suggestion ${name}!`;
+                 }
+                </script>     
               </body>
-                </html
+              </html>

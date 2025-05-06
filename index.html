@@ -11,7 +11,7 @@
       font-family: sans-serif;
       text-align: center;
       margin: 0;
-      padding-top: 120px; /* Space for fixed logo and title */
+      padding-top: 120px;
     }
 
     h1, h2 {
@@ -46,7 +46,6 @@
       max-width: 80%;
     }
 
-    /* Sticky logo and title in top-left */
     .logo-container {
       position: fixed;
       top: 10px;
@@ -71,14 +70,17 @@
     .not {
       margin-top: 30px;
     }
+    p{
+      color:white
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top-of-page title -->
+  
   <h1 style="color: white; margin-top: 20px;">Very Sigma Images</h1>
 
-  <!-- Top-left fixed logo and title -->
+  
   <div class="logo-container">
     <img class="logo" src="https://iili.io/3wUwQYN.png" alt="Logo" />
     <h2 class="title_text">sigma.com</h2>
@@ -106,14 +108,6 @@
     </a>
   </div>
 
-  <label for="link">Image suggestions (link)</label>
-  <input id="link" type="text" />
-
-  <label for="name">Your name</label>
-  <input id="name" type="text" />
-
-  <button id="submit">Submit</button>
-  <h2 id="input_result"></h2>
 
   <script>
     function appear() {
@@ -131,14 +125,31 @@
     function disappear_not() {
       document.getElementById("not").style.display = "none";
     }
+  </script>
+  <h2></h2>
+  <h1>this video is very sigma</h1>
+  <a
+   href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">
+  <button>Click to show video</button>
+</a>
+  <h1>Any suggestion?</h2>
+      <label for="link">Image suggestions (link)</label>
+  <input id="link" type="text" />
 
-    document.getElementById("submit").onclick = function () {
+  <label for="name">Your name</label>
+  <input id="name" type="text" />
+
+  <button id="submit">Submit</button>
+  <h2 id="input_result"></h2>
+      <script>
+        document.getElementById("submit").onclick = function () {
       const suggestion = document.getElementById("link").value;
       const name = document.getElementById("name").value;
       document.getElementById("input_result").textContent = `Thank you for the suggestion, ${name}!`;
     };
   </script>
+      </body>
+</html>
 
-</body>
 </html>
 

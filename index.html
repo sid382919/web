@@ -115,12 +115,13 @@
   <h1>Any suggestion?</h1>
 
   <!-- ✅ Netlify form, stays on same page -->
-  <form name="suggestions" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleFormSubmit(event)">
+  <form name="suggestions" method="POST" data-netlify="true" onsubmit="handleFormSubmit(event)">
     <input type="hidden" name="form-name" value="suggestions" />
     <p style="display:none">
       <label>Don’t fill this out: <input name="bot-field" /></label>
     </p>
 
+    <!-- User inputs -->
     <label for="link">Image suggestions (link)</label>
     <input id="link" name="link" type="text" required />
 
@@ -155,6 +156,7 @@
       document.getElementById("not").style.display = "none";
     }
 
+    // Form Submission Handler for Netlify Form
     function handleFormSubmit(event) {
       event.preventDefault();
       const form = event.target;

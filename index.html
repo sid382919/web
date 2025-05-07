@@ -133,20 +133,24 @@
   <button>Click to show video</button>
 </a>
   <h1>Any suggestion?</h2>
+  <form>
       <label for="link">Image suggestions (link)</label>
   <input id="link" type="text" />
-
-  <label for="name">Your name</label>
+<label for="name">Your name</label>
   <input id="name" type="text" />
+  <input type = "submit" id = "submit">
+  </form>
 
-  <button id="submit">Submit</button>
+
   <h2 id="input_result"></h2>
       <script>
-        document.getElementById("submit").onclick = function () {
-      const suggestion = document.getElementById("link").value;
-      const name = document.getElementById("name").value;
-      document.getElementById("input_result").textContent = `Thank you for the suggestion, ${name}!`;
-    };
+      document.getElementById("submit").onclick = function (event) {
+  event.preventDefault(); 
+  const suggestion = document.getElementById("link").value;
+  const name = document.getElementById("name").value;
+  document.getElementById("input_result").textContent = `Thank you for the suggestion, ${name}!`;
+};
+
   </script>
   <p>more websites by me</p>
   <a href = "https://sigmasid-calculator.netlify.app/">

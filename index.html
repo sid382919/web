@@ -70,6 +70,7 @@
     .not {
       margin-top: 30px;
     }
+
     p {
       color: white;
     }
@@ -106,6 +107,37 @@
     </a>
   </div>
 
+  <h1>this video is very sigma</h1>
+  <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">
+    <button>Click to show video</button>
+  </a>
+
+  <h1>Any suggestion?</h1>
+
+  <!-- ✅ Netlify form, stays on same page -->
+  <form name="suggestions" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleFormSubmit(event)">
+    <input type="hidden" name="form-name" value="suggestions" />
+    <p style="display:none">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
+
+    <label for="link">Image suggestions (link)</label>
+    <input id="link" name="link" type="text" required />
+
+    <label for="name">Your name</label>
+    <input id="name" name="name" type="text" required />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2 id="input_result"></h2>
+
+  <p>more websites by me</p>
+  <a href="https://sigmasid-calculator.netlify.app/">
+    <button>my calculator</button>
+  </a>
+
+  <!-- Scripts -->
   <script>
     function appear() {
       document.getElementById("my_img").style.display = "block";
@@ -122,33 +154,25 @@
     function disappear_not() {
       document.getElementById("not").style.display = "none";
     }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        const name = formData.get("name");
+        document.getElementById("input_result").textContent = `Thank you for the suggestion, ${name}!`;
+        form.reset();
+      })
+      .catch((error) => alert("Submission failed: " + error));
+    }
   </script>
-
-  <h1>this video is very sigma</h1>
-  <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">
-    <button>Click to show video</button>
-  </a>
-
-  <h1>Any suggestion?</h1>
-
-
-  <form name="suggestions" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="suggestions" />
-    
-    <label for="link">Image suggestions (link)</label>
-    <input id="link" name="link" type="text" required />
-
-    <label for="name">Your name</label>
-    <input id="name" name="name" type="text" required />
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <p>more websites by me</p>
-  <a href="https://sigmasid-calculator.netlify.app/">
-    <button>my calculator</button>
-  </a>
 
 </body>
 </html>
-

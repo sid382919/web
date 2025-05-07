@@ -70,17 +70,15 @@
     .not {
       margin-top: 30px;
     }
-    p{
-      color:white
+    p {
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  
   <h1 style="color: white; margin-top: 20px;">Very Sigma Images</h1>
 
-  
   <div class="logo-container">
     <img class="logo" src="https://iili.io/3wUwQYN.png" alt="Logo" />
     <h2 class="title_text">sigmasid.com</h2>
@@ -108,7 +106,6 @@
     </a>
   </div>
 
-
   <script>
     function appear() {
       document.getElementById("my_img").style.display = "block";
@@ -126,35 +123,32 @@
       document.getElementById("not").style.display = "none";
     }
   </script>
-  <h2></h2>
+
   <h1>this video is very sigma</h1>
-  <a
-   href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">
-  <button>Click to show video</button>
-</a>
-  <h1>Any suggestion?</h2>
-  <form>
-      <label for="link">Image suggestions (link)</label>
-  <input id="link" type="text" />
-<label for="name">Your name</label>
-  <input id="name" type="text" />
-  <input type = "submit" id = "submit">
+  <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">
+    <button>Click to show video</button>
+  </a>
+
+  <h1>Any suggestion?</h1>
+
+
+  <form name="suggestions" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="suggestions" />
+    
+    <label for="link">Image suggestions (link)</label>
+    <input id="link" name="link" type="text" required />
+
+    <label for="name">Your name</label>
+    <input id="name" name="name" type="text" required />
+
+    <button type="submit">Submit</button>
   </form>
 
-
-  <h2 id="input_result"></h2>
-      <script>
-      document.getElementById("submit").onclick = function (event) {
-  event.preventDefault(); 
-  const suggestion = document.getElementById("link").value;
-  const name = document.getElementById("name").value;
-  document.getElementById("input_result").textContent = `Thank you for the suggestion, ${name}!`;
-};
-
-  </script>
   <p>more websites by me</p>
-  <a href = "https://sigmasid-calculator.netlify.app/">
+  <a href="https://sigmasid-calculator.netlify.app/">
     <button>my calculator</button>
   </a>
-      </body>
+
+</body>
 </html>
+
